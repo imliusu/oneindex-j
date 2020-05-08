@@ -124,7 +124,7 @@ bash /etc/init.d/fcgiwrap-php restart
 
 ## 重新安装
 删除 oneindex/config 下的所有文件即可.                
-一键安装的地址: /var/www/oneindex/config                
+一键安装的地址: /home/wwwroot/${domain}/config           
 
 ## change log:  
 18-03-29: 更新直链获取机制、缓存机制，避免频繁访问的token失效  
