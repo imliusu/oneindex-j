@@ -10,9 +10,36 @@
 	<script src="//cdn.staticfile.org/layer/2.3/layer.js"></script>
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-	<link rel="shortcut icon" href="https://image.suning.cn/uimg/ZR/share_order/158562104413864293.jpg">
+	<link rel="shortcut icon" href="https://yangwenqing.com/Logo.png">
 
 	 <style>
+        .mdui-theme-primary-indigo .mdui-color-theme {
+            color: #fff !important;
+            background-color: #1199c4 !important;
+        }
+        .mdui-grid-tile {
+            position: relative;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 120px;
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+       .mdui-drawer {
+            width: 200px;
+            max-width: none;
+        }
+       .mdui-color-indigo-50 {
+            color: rgba(0, 0, 0, .87) !important;
+            background-color: #dde6e9 !important;
+        }
+        [class*="mdui-color-"]
+       .mdui-list-item {
+            color: #777d7f;
+        }
 		.mdui-appbar .mdui-toolbar			
 			height:56px;
 			font-size: 10px;
@@ -88,6 +115,10 @@
 		#dl-header{margin:0}
 		#dl-section{padding-top:10px}
 		#dl-latest{position:relative;top:50%;transform:translateY(-50%)}
+       .oneindex{
+            text-align: center;
+            color: #777d7f;
+       }
 	</style>
 </head>
 <body class=" mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
@@ -106,14 +137,9 @@
 
 <div class="mdui-drawer mdui-drawer-close mdui-color-indigo-50" id="main-drawer">
 	<div class="mdui-grid-tile">
-		<a href="javascript:;"><img src="https://image.suning.cn/uimg/ZR/share_order/158562116951626812.jpg"/></a>
-		<div class="mdui-grid-tile-actions mdui-grid-tile-actions-gradient">
-			<div class="mdui-grid-tile-text">
-				<div class="mdui-grid-tile-title"><?php e($title.' - '.config('site_name'));?></div>
-				<div class="mdui-grid-tile-subtitle">Onedrive</div>
-    			</div>
-   		 </div>
-	</div>   
+		<a href="javascript:;"><img src="https://yangwenqing.com/Logo.png"/></a>
+	</div> 
+ <div class="oneindex">Oneindex</div> 
 	<div class="mdui-list" mdui-collapse="{accordion: true}">
 		<a href="/" class="mdui-list-item mdui-ripple">
 			<i class="mdui-list-item-icon mdui-icon material-icons">home</i>
