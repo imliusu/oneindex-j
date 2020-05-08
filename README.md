@@ -1,7 +1,7 @@
 ## 预览地址  
-[od.xkx.me](https://od.xkx.me/)
+[cloud.yangwenqing.com](https://cloud.yangwenqing.com/)
 
-## V佬的项目基础上更新
+## [Vicer](https://github.com/0oVicero0/oneindex)的Oneindex项目基础上更新
 
 1.内嵌播放
 
@@ -21,64 +21,70 @@
 
 1.nginx伪静态
 ```
-if (!-f $request_filename){
-set $rule_0 1$rule_0;
-}
-if (!-d $request_filename){
-set $rule_0 2$rule_0;
-}
-if ($rule_0 = "21"){
-rewrite ^/(.*)$ /index.php?/$1 last;
-}
+location / {
+	index index.html index.php; 
+	if (-f $request_filename/index.html){ 
+		rewrite (.*) $1/index.html break; 
+	} 
+	if (-f $request_filename/index.php){ 
+		rewrite (.*) $1/index.php; 
+	} 
+	if (!-f $request_filename){ 
+		rewrite (.*) /index.php; 
+	} 
+} 
+
+rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 ```
-重要:如设置了伪静态去除/?/,需把view/nexmoe/list.php的173和179行的"&s=1"改为"?s"(或者改为以post方式请求这个链接，我不会改啊)
                
 2.后台侧边栏代码示例
 ```
-    <div class="mdui-collapse-item">
+   <div class="mdui-collapse-item">
+  	
+  	<a href="https://www.yangwenqing.com" target="_blank" class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">grade</i>
+        <div class="mdui-list-item-content">导航</div>
+    </a>
+    
+    <a href="https://yangwenqing.com" target="_blank" class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">brush</i>
+        <div class="mdui-list-item-content">博客</div>
+    </a>
+
         <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-            <i class="mdui-list-item-icon mdui-icon material-icons">folder</i>
-            <div class="mdui-list-item-content">Test</div>
+            <i class="mdui-list-item-icon mdui-icon material-icons">storage</i>
+            <div class="mdui-list-item-content">云盘</div>
             <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
         </div>
         <div class="mdui-collapse-item-body mdui-list">
-            <a href="/?/456" class="mdui-list-item mdui-ripple ">456</a>
+            <a href="https://pan.yangwenqing.com" target="_blank" class="mdui-list-item mdui-ripple ">天翼云盘</a>
         </div>
 	<div class="mdui-collapse-item-body mdui-list">
-            <a href="/?/345" class="mdui-list-item mdui-ripple ">345</a>
+            <a href="https://yun.yangwenqing.com" target="_blank" class="mdui-list-item mdui-ripple ">Onedrive</a>
         </div>      
     </div>
 
-    <a href="/?/234" class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">folder</i>
-        <div class="mdui-list-item-content">234</div>
-    </a>
-    
-    <a href="#" class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">message</i>
-        <div class="mdui-list-item-content">Telegram频道</div>
-    </a>
+   <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">build</i>
+            <div class="mdui-list-item-content">工具</div>
+            <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
     
     <span class="mdui-list-item mdui-ripple" id="example-bottom">
         <i class="mdui-list-item-icon mdui-icon material-icons">attach_money</i>
         <div class="mdui-list-item-content">打赏</div>
     </span>
     
-    <a href="#" class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">bubble_chart</i>
-        <div class="mdui-list-item-content">Blog</div>
-    </a>
-    
-    <a href="#" class="mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">info_outline</i>
-       <div class="mdui-list-item-content">关于</div>
+    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=yovter96@gmail.com" target="_blank" class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">chat</i>
+       <div class="mdui-list-item-content">联系</div>
     </a>
 
 <script>
 var $$ = mdui.JQ;
 $$('#example-bottom').on('click', function () {
   mdui.snackbar({
-    message: '<img src="/qr.png"/>',
+    message: '<img src="/qr.jpg"/>',
     position: 'top'
   });
 });
