@@ -1,5 +1,5 @@
 ## 预览地址  
-[cloud.yangwenqing.com](https://cloud.yangwenqing.com/)
+[od.xkx.me](https://od.xkx.me/)
 
 ## 魔改功能
 [Vicer](https://github.com/0oVicero0/oneindex)项目基础上更新
