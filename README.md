@@ -1,25 +1,26 @@
 ## 预览地址  
 [cloud.yangwenqing.com](https://cloud.yangwenqing.com/)
 
-## [Vicer](https://github.com/0oVicero0/oneindex)的Oneindex项目基础上更新
+## 魔改功能
+[Vicer](https://github.com/0oVicero0/oneindex)项目基础上更新
 
-1.内嵌播放
+- 1.内嵌播放
 
-2.侧边栏功能
+- 2.侧边栏功能
 
-3.增加glightbox插件，支持图片响应式弹出，滑动查看。
+- 3.增加glightbox插件，支持图片响应式弹出，滑动查看。
 如希望视频也才用此插件，请修改view/nexmoe/list.php第107行视频对应的class="iframe"改为class="glightbox"
 
-4.增加反代sharepoint.com功能（由ppx[ppxwo.com]修改）
+- 4.增加反代sharepoint.com功能（由ppx[ppxwo.com]修改）
 可通过Nginx/CDN反代sharepoint.com，加快速度。
 
-5.增加Aplayer获取当前页所有音频列表播放。
+- 5.增加Aplayer获取当前页所有音频列表播放。
 
-6.增加PDF.js预览pdf文件。
+- 6.增加PDF.js预览pdf文件。
 
-其他说明
+## 其他说明
 
-1.nginx伪静态
+### Nginx伪静态
 ```
 location / {
 	index index.html index.php; 
@@ -37,7 +38,7 @@ location / {
 rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 ```
                
-2.后台侧边栏代码示例
+### 侧边栏代码
 ```
    <div class="mdui-collapse-item">
   	
@@ -94,14 +95,16 @@ $$('#example-bottom').on('click', function () {
 
 ----------------------------------------------------------------------------------------------
 
-# oneindex
-OneDrive Directory Index
-
 ## 功能：
 不用服务器空间，不走服务器流量，  
 
 直接列onedrive目录，文件直链下载。  
 
+## 一键安装（Debian 8）：
+
+```
+wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/master/install.sh |bash
+```
 
 ## 添加 Redis 支持（Debian 8）：
 ```
