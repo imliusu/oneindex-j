@@ -103,7 +103,7 @@ $$('#example-bottom').on('click', function () {
 ## 一键安装（Debian 8）：
 
 ```
-wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/master/install.sh |bash
+wget --no-check-certificate -qO- https://github.com/july929/oneindex-j/master/install.sh |bash
 ```
 
 ## 添加 Redis 支持（Debian 8）：
